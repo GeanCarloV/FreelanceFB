@@ -1,0 +1,294 @@
+/* para almacenar en la parte principal de proyecto */
+:root {
+    /*CUSTOM PROPERTIS: crear variables 
+    para todoel proyecto */
+    --secundario: #0097a7;  
+    --primario: #ffc107;
+    --oscuro: #212121;
+    --gris: #757575;
+    --anchoPantalla: 1200px;
+}
+
+html {
+     box-sizing: border-box;
+     /* asegura q el la base degradada sea uniform en toda la page */
+     min-height: 100%;
+     /* esto por que el navegador trata de rederizar las letras a 16 px 
+     a esto le sacamos el 62.5 % y entonces es equivalente a 10 px 
+     lo entonces ahora 1 rem es a 10 px */
+     font-size: 62.5%;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+     font-family: 'krub', sans-serif;
+    /* asegura q el la base degradada se ponga en toda la pagina */
+    min-width: 100%; 
+    /* pone un degarado de color en fondo de la pagina de 	webgradients.com */
+     background-image: linear-gradient(135deg, #f5f7fa, 0%, #c3cfe2 100%);
+     /* es decir 16 pixeles */
+     font-size: 1.6rem;
+}
+
+/* para centrar mejor */
+h1, h2, h3 { 
+    margin: 0;
+}
+
+
+/* ------------------Header---------------------*/
+
+.site-header { 
+    background-color: white;
+}
+
+.site-header nav { 
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 0;
+/* configuracion de flexbox */
+    display: flex;
+    flex-direction: column-reverse;
+    /* para centralo en movil */
+    align-items: center;
+}
+/* 768 tamñao estandar de una tablet */
+@media (min-width: 768px) {
+    .site-header nav { 
+        /* para destok tengo q regrarsolo a horizaontal
+        de igula maneta para que se aplique el jsutify */
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.site-header nav a {
+    /* de la variable que creamos */
+    color: var(--oscuro);
+    font-size: 2.2rem;
+    text-decoration: none;
+} 
+.site-header nav a:last-of-type{
+    margin-bottom: 0;
+}
+@media (min-width: 768px) {
+    .site-header nav a {
+        margin-bottom: 0;
+        padding: 0 1rem 0 1rem; 
+    }
+}
+
+/* ------------------Hero---------------------*/
+.hero{ 
+    height: 45rem;
+    background-image: url(../img/hero.jpg);
+    /* por el after  */
+    position: relative;
+    /* se pone flexbox para los elementos dentro del her q estan en div */
+    display: flex;
+    justify-content: center;
+    /* CENTRARLO HORIZONTALMETNE por el row*/
+    align-items: center;
+}
+/* poner un estilo antes  */
+.hero::after { 
+    /* para poner un efecto ensima del contenido */
+    content: '';
+    background-color: rgba(0, 0, 0, .6);
+    /* como lo acomodamos para que este en todo el espacio */
+    position: absolute; /* siempre  after se espcifica y  padre relative*/
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.contenedor-hero {
+    color: white;
+    /* para traer unos elementos arriba de otor hablando de capas,
+    esto esta arriba del after */
+    position: relative;
+    z-index: 1;
+    /* para centrar las cosas */
+    text-align: center;
+}
+
+.contenedor-hero i { 
+    font-size: 40px;
+    color: var(--primario);
+}
+
+.boton { 
+    background-color:  var(--secundario);
+    padding: 1rem 4rem;
+    /* da una mejor separacion entre elementos, 
+    ademas que podemos dar el padding */
+    display: inline-block;
+     /*es este caso lo aleja de los elemetnos 
+     dentro del contendor  */
+    margin-top: 1rem;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 2.2rem;
+    border-radius: 0.5rem; 
+}
+
+/* ------------------Main---------------------*/
+.contenedor { 
+    max-width: var(--anchoPantalla);
+    /* para centrarlo */
+    margin: 0 auto;
+    background-color: white;
+    padding: 3rem;
+    border-radius: 1rem; 
+    /* el estilo de sombrado y forma que da www.cssmatic.com */
+    -webkit-box-shadow: 0px 11px 15px -9px rgba(0,0,0,0.63);
+    -moz-box-shadow: 0px 11px 15px -9px rgba(0,0,0,0.63);
+    box-shadow: 0px 11px 15px -9px rgba(0,0,0,0.63);
+    /* el contenedor tiene 3 de arriba a abajo
+    y se acomoda automaitcamente en los costador 
+    segun el tamaño de la page */
+    margin: 3rem auto;
+}
+
+
+h2, h3 { 
+    text-align: center;
+}
+
+h3 { 
+    color: var(--secundario);
+    font-weight: 400;
+    font-size: 3rem;
+}
+
+
+
+
+p {
+    font-size: 1.8rem;
+    line-height: 2;
+    text-align: justify;
+}
+
+.contenedor-servicios {
+    margin-top: 3rem;
+}
+
+
+@media (min-width: 768px) {
+    
+    .contenedor-servicios {
+        display: flex;
+        justify-content: space-between;
+    }
+    /* este estilo se escribo en el hijo 
+    del felxbox de contenedor*/
+    .servicio {
+        /* flex: es un atajo como margin 0 auto, 
+        factor crecimiento, pequeñes, su base */
+        /*el factor de crecimento lo divide en tres y crece iguales cuando es 1 
+        ,si otro se pondria 2 creceria el doble,
+        base: es un espacio q no se pasa, y calc calcula y dice 
+        toma un 33.3% del contendeor y restalte 1rem(10px). 
+         */
+        flex: 0 0 calc( 33.3% - 1rem );
+    }
+}
+
+.iconos { 
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: var(--primario);
+    /* acomodar los icconos */
+    display: flex;
+    /* ccentrado horizontal */
+    justify-content: space-evenly;
+    /* centrado vertical */
+    align-items: center;
+    /* hacer grandes los iconos */
+    font-size: 3rem;
+    margin-top: 2rem;
+    /* para centrar en el medio de sus elementos */
+    margin: 0 auto;
+}
+
+/* ------------------Formulario---------------------*/
+form {
+    background-color: var(--gris);
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-top: 3rem;
+}
+
+form legend { 
+    text-align: center;
+    font-size: 2rem;
+    color: var(--primario);
+    margin: 3rem 0;
+}
+
+@media (min-width: 768px) {
+    form { 
+        max-width: 800px;
+        /* para centrarlo */
+        margin: 3rem auto;
+    }
+
+    .contenedor-campos {
+        display: flex;
+        justify-content: space-between;
+        /* para salto de linea de los elemetons 
+        si cchoca con su contendor  */
+        flex-wrap: wrap;
+    }
+    .campo {
+        flex: 0 0 calc(50% - 1rem);
+    }
+}
+
+/* le damos al padre el felx box, y acomodamos su label 
+en esta parte */
+.campo { 
+    display: flex; 
+    margin-bottom: 2rem;
+}
+.campo label {
+    flex: 0 0 90px;
+    padding-top: 0.5rem;
+    color: white;
+}
+.campo input { 
+    /* fator de crecimiento */
+    flex: 1;
+    height: 4rem;
+}
+.campo textarea {
+    /* cresca dentro de su contendor */
+    flex: 1;
+    height: 8rem;
+}
+
+.w-100 {
+    /* como es el hijo para que tome la base 
+    del 100 % */
+    flex: 0 0 100%;
+}
+
+.boton:hover {
+    cursor: pointer;
+}
+.enviar {
+    display: flex;
+    justify-content: flex-end;   
+}
+.boton { 
+    /* este borde se quita por q por default los input
+    ya vienen con uno */
+    border: none;
+}

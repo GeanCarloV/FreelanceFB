@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Freelancer Flexbox</title>
+    <link href="https://fonts.googleapis.com/css?family=Krub" rel="stylesheet">
+    <!-- anexamos tambien de otra manera normalizq no por archivco si no por link-->
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.0/normalize.css">
+    <!--metemos los iconos de font awasone  -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" 
+    integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" 
+    crossorigin="anonymous">
+    <!-- anexamos la fuente de google font-->
+    <link href="https://fonts.googleapis.com/css?family=Krub:400,700" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <nav class="site-header">
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Nosotros</a>
+            <a href="#">Clientes</a>
+            <a href="#">Contactos</a>
+        </nav> 
+    </nav>
+    
+    <div class="hero">
+         <div class="contenedor-hero">
+             <h1>Diseño y Desarrollo Web</h1>
+             <!-- ponemos el icono de igual manera -->
+             <p> <i class="fas fa-map-marker-alt"></i>  Merida, Yucatan</p>
+             <a href="$" class="boton">Contactar</a>
+         </div>
+    </div>
+
+    <div class="contenedor">
+        <main class="servicios ">
+            
+            <h2>Nuestros Servicios</h2>
+            <div class="contenedor-servicios">
+                <div class="servicio">
+                    <h3>Diseño Web</h3>
+                    <div class="iconos">
+                            <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit 
+                        olestiae quo temporibus </p>
+                </div>
+
+                <div class="servicio">
+                    <h3>Aplicaciones Moviles</h3>
+                    <div class="iconos">
+                        <i class="fab fa-android"></i>
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit 
+                        olestiae quo temporibus, </p>
+                </div>
+
+                <div class="servicio">
+                    <h3>Social Media</h3>
+                    <div class="iconos">
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit 
+                        olestiae quo temporibus,</p>
+                </div> 
+            </div>
+        </main>
+
+        <seccion id="contacto" class="contacto">
+            <h2>Contacto</h2>
+            <form action="#">
+                <legend>Contactanos Llenando los campos</legend>
+
+                <div class="contenedor-campos">
+                    
+                    <div class="campo">
+                        <label for="">Nombre </label>
+                        <input type="text" name="nombre" placeholder="Nombre">
+                    </div>
+
+                    <div class="campo">
+                        <label for="">Telefono: </label>
+                        <input type="tel" name="nombre" placeholder="Telefono">
+                    </div>
+                    
+                    <div class="campo w-100">
+                        <label for="">Correo:  </label>
+                        <input type="mail" name="nombre" placeholder="Correo electronico">
+                    </div>
+                    <div class="campo w-100">
+                        <label for="">Mensaje:  </label>
+                        <Textarea></Textarea>
+                    </div>
+                </div>
+
+                <div class="enviar">
+                    <input type="submit" class="boton" value="enviar">
+                </div>
+            </form>
+        </seccion>
+    </div>
+
+</body>
+</html>
